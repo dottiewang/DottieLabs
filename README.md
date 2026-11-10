@@ -16,13 +16,8 @@ Plain HTML + CSS. No build step, no framework, no JavaScript (except the Print b
 ## Open locally
 Open `index.html` in a browser, or in VS Code use the Live Server extension. (The `/` logo link and `qr/` folder link work best when served, not opened as a file.)
 
-## Deploy with Cloudflare Pages
-Connect the GitHub repository to Cloudflare Pages so pushes deploy automatically:
-1. In Cloudflare, open **Workers & Pages** and create a Pages project from the GitHub repository.
-2. Leave the framework preset as **None** and the build command blank. Set the build output directory to `.`.
-3. After the first deployment, add `dottielabs.com` as a custom domain in the Pages project. Cloudflare will configure DNS for a domain managed in the same Cloudflare account.
-
-There is no build step. `/qr/` resolves to `qr/index.html` automatically.
+## Deploy
+Upload the folder as-is to any static host: Netlify (drag and drop), Cloudflare Pages, Vercel, GitHub Pages, or S3. Point dottielabs.com at it. `/qr/` resolves to `qr/index.html` automatically.
 
 ## Print the QR sheet
 Go to `/qr/`, click **Print (letter)** (or Cmd/Ctrl+P). Choose Letter, scale 100%, margins Default, and turn on "Background graphics" for best results. Each code prints at ~2.1 in.
