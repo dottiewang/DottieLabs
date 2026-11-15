@@ -1,0 +1,9 @@
+{
+  "name": "Dottie Labs",
+  "short_name": "Dottie Labs",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#FBFAF7",
+  "theme_color": "#FBFAF7",
+  "icons": [{ "src": "/assets/favicon-192.png", "sizes": "192x192", "type": "image/png" }]
+}
