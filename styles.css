@@ -5,7 +5,7 @@
   --muted: #6B6B6B;
   --line: #E9E5DC;
   --card: #FFFFFF;
-  --fire: linear-gradient(90deg, #FF8A00 0%, #FF4A1C 55%, #C8102E 100%);
+  --fire: linear-gradient(90deg, #B85600 0%, #C8102E 100%);
   --focus: #FF4A1C;
   --max: 1160px;
   --pad: clamp(20px, 5vw, 56px);
@@ -149,6 +149,7 @@ a:hover { color: #C8102E; text-decoration-color: currentColor; }
 .sheet { max-width: 8.5in; margin: 32px auto; padding: 0.6in; background: #fff; border: 1px solid var(--line); border-radius: 12px; }
 .sheet-head { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-bottom: 0.25in; border-bottom: 1px solid var(--line); }
 .sheet-head img { height: 0.42in; width: auto; }
+.sheet-head h1 { margin: 0; font-size: 18px; line-height: 1.2; }
 .sheet-head span { font-size: 12px; color: var(--muted); }
 .qr-grid { list-style: none; margin: 0.35in 0 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.3in 0.4in; }
 .qr-grid li { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 0.18in; border: 1px dashed #D9D3C7; border-radius: 10px; break-inside: avoid; }
