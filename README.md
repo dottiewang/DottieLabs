@@ -1,9 +1,9 @@
 # dottielabs.com — static site
 
-Plain HTML + CSS. No build step, no framework. The only JavaScript is the Print button on the QR sheet and a one-line check that turns on the hover flip when a card has a screenshot.
+Plain HTML + CSS. No build step, no framework. The only JavaScript is the Print button on the QR sheet.
 
 ## Files
-- `index.html` — homepage (header, hero, project cards with QR codes + URL labels, hover-flip screenshots, about, footer)
+- `index.html` — homepage (header, hero, project cards with QR codes + URL labels, about, footer)
 - `qr/index.html` — printable QR sheet (letter size, 2 × 3 grid). Private: not linked from the site, marked noindex. Visit dottielabs.com/qr directly.
 - `styles.css` — all styles, including the print stylesheet
 - `assets/dottie-labs-logo-lockup-transparent.png` — official lockup (used in header + QR sheet)
@@ -11,7 +11,6 @@ Plain HTML + CSS. No build step, no framework. The only JavaScript is the Print 
 - `assets/dottie-labs-flame-mark.png` — flame only
 - `assets/favicon-32.png`, `assets/favicon-192.png`, `assets/apple-touch-icon.png` — icons from the flame
 - `assets/rings.svg` — top-right decorative rings
-- `assets/shots/*.jpg` — card screenshots for the hover flip (add these yourself, see below)
 - `assets/qr/*.svg` — QR codes (error correction M, 4-module quiet zone, black on white)
 
 ## Open locally
@@ -44,5 +43,3 @@ Go to `/qr/`, click **Print (letter)** (or Cmd/Ctrl+P). Choose Letter, scale 100
 ## Editing projects
 Each project is one `<li>` in `index.html` and one in `qr/index.html`. If a URL changes, regenerate its QR (any generator that outputs SVG: error correction M or higher, no center logo) and replace the file in `assets/qr/`.
 
-## Card screenshots (hover flip)
-Drop a screenshot for each project into `assets/shots/`, named after its card id: `get-recd-lv.jpg`, `say-it-with-a-bloom.jpg`, `just-in-case-im-dead.jpg`, `young-roth-club.jpg`, `readingtheroom4u.jpg`, `p1meetsp2.jpg`. Landscape, about 1200 × 750, top of the homepage. On desktop, hovering a card flips it to its screenshot. Cards without a screenshot don't flip. Phones never flip.
