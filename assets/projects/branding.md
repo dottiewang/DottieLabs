@@ -65,3 +65,14 @@
 - body font: not found
 - font source: not found
 - style: not found
+
+## group-trippy
+- url: https://grouptrippy.com
+- logo file: not found
+- primary: #4f46e5
+- secondary: #eef2ff
+- background: #f9fafb
+- heading font: system sans-serif (Tailwind default)
+- body font: system sans-serif (Tailwind default)
+- font source: system
+- style: light, modern group travel

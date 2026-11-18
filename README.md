@@ -4,14 +4,14 @@ Plain HTML + CSS. No build step, no framework. The only JavaScript is the Print 
 
 ## Files
 - `index.html` — homepage (header, hero, project cards with QR codes + URL labels, about, footer)
-- `qr/index.html` — printable QR sheet (letter size, 2 × 3 grid). Private: not linked from the site, marked noindex. Visit dottielabs.com/qr directly.
+- `qr/index.html` — printable QR sheet (letter size, two-column grid across pages). Private: not linked from the site, marked noindex. Visit dottielabs.com/qr directly.
 - `styles.css` — all styles, including the print stylesheet
 - `assets/dottie-labs-logo-lockup-transparent.png` — official lockup (used in header + QR sheet)
 - `assets/dottie-labs-logo-lockup.png` — lockup on off-white (for social/OG use)
 - `assets/dottie-labs-flame-mark.png` — flame only
 - `assets/favicon-32.png`, `assets/favicon-192.png`, `assets/apple-touch-icon.png` — icons from the flame
 - `assets/rings.svg` — top-right decorative rings
-- `assets/qr/*.svg` — QR codes (error correction M, 4-module quiet zone, black on white)
+- `assets/qr/*.svg` — QR codes (error correction M, 4-module quiet zone, dark on white or transparent)
 
 ## Open locally
 Open `index.html` in a browser, or in VS Code use the Live Server extension. (The `/` logo link and `qr/` folder link work best when served, not opened as a file.)

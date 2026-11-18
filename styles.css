@@ -143,6 +143,8 @@ a:hover { color: #C8102E; text-decoration-color: currentColor; }
 #p1meetsp2 .mark i:last-child { left: 16px; background: radial-gradient(circle at 35% 35%, #FFE08A, #E8A92A 70%); }
 #p1meetsp2 h3 .p2 { background: linear-gradient(90deg, #2AA9F0, #8B5CF6 55%, #E8C468); -webkit-background-clip: text; background-clip: text; color: transparent; }
 #p1meetsp2 .visit { font-weight: 700; }
+
+#group-trippy { --c-bg: #F9FAFB; --c-glow: radial-gradient(110% 90% at 100% 0%, rgba(79,70,229,.12), transparent 60%); --c-ink: #1F2937; --c-head-ink: #4338CA; --c-muted: #4B5563; --c-line: #D1D5DB; --c-qr-line: #E5E7EB; --c-tag: #EEF2FF; --c-accent: #4338CA; --c-bar: #4F46E5; --c-btn: #4F46E5; --c-btn-ink: #fff; --c-btn-hover: #4338CA; --c-btn-hover-ink: #fff; --c-hover-line: #4F46E5; --c-shadow: rgba(79,70,229,.35); --c-mark-bg: #4F46E5; --c-mark-ink: #fff; --c-head: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; --c-head-weight: 700; --c-head-size: 28px; --c-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
 .card .qr { width: 136px; height: 136px; border-radius: 4px; }
 @media (max-width: 440px) {
   .card { grid-template-columns: 1fr; }
