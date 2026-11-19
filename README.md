@@ -1,9 +1,10 @@
 # dottielabs.com — static site
 
-Plain HTML + CSS. No build step, no framework. The only JavaScript is the Print button on the QR sheet.
+Plain HTML + CSS with small scripts for the video fullscreen buttons and the Print button on the QR sheet. No build step, no framework.
 
 ## Files
 - `index.html` — homepage (header, hero, project cards with QR codes + URL labels, about, footer)
+- `commercials/index.html` — video portfolio with native playback controls and fullscreen buttons where supported
 - `qr/index.html` — printable QR sheet (letter size, two-column grid across pages). Private: not linked from the site, marked noindex. Visit dottielabs.com/qr directly.
 - `styles.css` — all styles, including the print stylesheet
 - `assets/dottie-labs-logo-lockup-transparent.png` — official lockup (used in header + QR sheet)

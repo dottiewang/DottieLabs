@@ -27,17 +27,17 @@
 </head>
 <body>
 <a class="skip" href="#watch">Skip to video portfolio</a>
-<div class="page">
+<div class="page page--portfolio">
   <img class="rings" src="../assets/rings.svg" alt="" aria-hidden="true">
   <header class="site-header">
     <div class="wrap">
-      <a class="logo" href="../index.html" aria-label="Dottie Labs home">
+      <a class="logo" href="../" aria-label="Dottie Labs home">
         <img src="../assets/dottie-labs-logo-lockup-transparent.png" width="157" height="34" alt="Dottie Labs">
       </a>
       <nav class="nav" aria-label="Primary">
-        <a href="../index.html#projects">Projects</a>
-        <a href="index.html">Video Portfolio</a>
-        <a href="../index.html#about">About</a>
+        <a href="../#projects">Projects</a>
+        <a href="./">Video Portfolio</a>
+        <a href="../#about">About</a>
       </nav>
     </div>
   </header>
@@ -49,28 +49,38 @@
           <div class="rule rule--sm" aria-hidden="true"></div>
           <h1>Video Portfolio</h1>
         </div>
-        <p class="section-note">Short ads for Dottie Labs projects. Tap to play.</p>
+        <p class="section-note">Short ads for Dottie Labs projects. Tap to play or watch fullscreen.</p>
       </div>
       <div class="reels">
-        <figure class="reel">
-          <figcaption><strong>Group Trippy</strong><span>Same trip, two ways to plan it · 45 sec</span></figcaption>
-          <video controls playsinline preload="metadata" src="../assets/video/grouptrippy-paris.mp4#t=0.5"></video>
-        </figure>
-        <figure class="reel">
+        <figure class="reel reel--case" id="video-just-in-case-im-dead">
           <figcaption><strong>Just In Case I'm Dead</strong></figcaption>
           <video controls playsinline preload="metadata" src="../assets/video/just-in-case-im-dead.mp4#t=0.5"></video>
+          <button class="reel-fullscreen" type="button" aria-label="Watch Just In Case I'm Dead fullscreen" hidden>⛶ Watch fullscreen</button>
+          <span class="reel-error" role="status"></span>
         </figure>
-        <figure class="reel">
+        <figure class="reel reel--bloom" id="video-say-it-with-a-bloom">
           <figcaption><strong>Say It With A Bloom</strong></figcaption>
           <video controls playsinline preload="metadata" src="../assets/video/say-it-with-a-bloom.mp4#t=0.5"></video>
+          <button class="reel-fullscreen" type="button" aria-label="Watch Say It With A Bloom fullscreen" hidden>⛶ Watch fullscreen</button>
+          <span class="reel-error" role="status"></span>
         </figure>
-        <figure class="reel">
+        <figure class="reel reel--roth" id="video-young-roth-club">
           <figcaption><strong>Young Roth Club</strong></figcaption>
           <video controls playsinline preload="metadata" src="../assets/video/young-roth-club.mp4#t=0.5"></video>
+          <button class="reel-fullscreen" type="button" aria-label="Watch Young Roth Club fullscreen" hidden>⛶ Watch fullscreen</button>
+          <span class="reel-error" role="status"></span>
         </figure>
-        <figure class="reel">
+        <figure class="reel reel--p1" id="video-p1meetsp2">
           <figcaption><strong>P1meetsP2</strong></figcaption>
           <video controls playsinline preload="metadata" src="../assets/video/p1meetsp2.mp4#t=0.5"></video>
+          <button class="reel-fullscreen" type="button" aria-label="Watch P1meetsP2 fullscreen" hidden>⛶ Watch fullscreen</button>
+          <span class="reel-error" role="status"></span>
+        </figure>
+        <figure class="reel reel--trippy" id="video-group-trippy">
+          <figcaption><strong>GroupTrippy</strong><span>Same trip, two ways to plan it · 45 sec</span></figcaption>
+          <video controls playsinline preload="metadata" src="../assets/video/grouptrippy-paris.mp4#t=0.5"></video>
+          <button class="reel-fullscreen" type="button" aria-label="Watch GroupTrippy fullscreen" hidden>⛶ Watch fullscreen</button>
+          <span class="reel-error" role="status"></span>
         </figure>
       </div>
     </div>
@@ -81,9 +91,9 @@
       <div class="foot-top">
         <img src="../assets/dottie-labs-logo-lockup-transparent.png" width="185" height="40" alt="Dottie Labs">
         <nav class="foot-nav" aria-label="Footer">
-          <a href="../index.html#projects">Projects</a>
-          <a href="index.html">Video Portfolio</a>
-          <a href="../index.html#about">About</a>
+          <a href="../#projects">Projects</a>
+          <a href="./">Video Portfolio</a>
+          <a href="../#about">About</a>
           <a href="mailto:dottie@dottielabs.com">Email</a>
         </nav>
       </div>
@@ -94,5 +104,27 @@
     </div>
   </footer>
 </div>
+<script>
+  document.querySelectorAll('.reel').forEach((reel) => {
+    const video = reel.querySelector('video');
+    const button = reel.querySelector('.reel-fullscreen');
+    const error = reel.querySelector('.reel-error');
+    if (!video.requestFullscreen && !video.webkitEnterFullscreen) return;
+    button.hidden = false;
+    button.addEventListener('click', async () => {
+      error.textContent = '';
+      try {
+        if (video.requestFullscreen) {
+          await video.requestFullscreen();
+        } else {
+          video.webkitEnterFullscreen();
+        }
+      } catch (err) {
+        console.error('Unable to open video fullscreen:', err);
+        error.textContent = 'Could not open fullscreen. Try the fullscreen control on the video.';
+      }
+    });
+  });
+</script>
 </body>
 </html>
