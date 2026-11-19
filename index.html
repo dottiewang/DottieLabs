@@ -179,8 +179,17 @@
             <img class="qr" src="assets/qr/p1meetsp2.svg" width="136" height="136" alt="QR code for p1meetsp2.com">
             <figcaption><span>Scan to visit</span><span class="qr-url">p1meetsp2.com</span></figcaption>
           </figure>
-          <details class="game-list">
-            <summary>Explore 14 games</summary>
+          <div class="game-trigger">
+            <button type="button" aria-haspopup="dialog" aria-controls="games-dialog">Explore 14 games <span aria-hidden="true">→</span></button>
+          </div>
+        </article>
+        <dialog class="game-list" id="games-dialog" aria-labelledby="games-title">
+          <div class="game-list-head">
+            <h2 id="games-title">Explore 14 games</h2>
+            <form method="dialog">
+              <button type="submit" aria-label="Close games list">Close <span aria-hidden="true">×</span></button>
+            </form>
+          </div>
             <ul>
               <li><strong>Great Minds:</strong> you each fill in the same blank separately, then reveal your answers together.</li>
               <li><strong>Hot Takes:</strong> slide from "nope" to "facts" on a statement, then compare.</li>
@@ -197,8 +206,7 @@
               <li><strong>Couch Detective:</strong> a co-op mystery where you each hold different clues.</li>
               <li><strong>Word Chain:</strong> road-trip rules, with categories like countries, celebs and movies.</li>
             </ul>
-          </details>
-        </article>
+        </dialog>
       </li>
       <li id="group-trippy">
         <article class="card">
@@ -266,5 +274,14 @@
     </div>
   </footer>
 </div>
+<script>
+  const gamesDialog = document.getElementById('games-dialog');
+  document.querySelector('#p1meetsp2 .game-trigger button').addEventListener('click', () => {
+    gamesDialog.showModal();
+  });
+  gamesDialog.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') gamesDialog.close();
+  });
+</script>
 </body>
 </html>
