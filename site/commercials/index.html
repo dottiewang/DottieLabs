@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Group Trippy Commercials</title>
+  <style>
+    body { margin: 0; padding: 32px; color: #1f2937; font: 16px/1.5 system-ui, sans-serif; }
+    main { max-width: 1080px; margin: 0 auto; }
+    h1 { margin: 0; font-size: clamp(28px, 5vw, 40px); }
+    .section-note { margin: 8px 0 24px; color: #4b5563; }
+    .reels { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
+    .reel { margin: 0; }
+    .reel video { display: block; width: 100%; height: auto; border-radius: 12px; background: #111827; }
+    .reel figcaption { display: grid; gap: 2px; padding-top: 10px; }
+    .reel figcaption span { color: #4b5563; }
+    @media (max-width: 640px) {
+      body { padding: 20px; }
+      .reels { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Group Trippy</h1>
+    <p class="section-note">Short ads for Group Trippy. Tap to play.</p>
+    <div class="reels">
+      <figure class="reel">
+        <video controls playsinline preload="metadata" poster="../assets/video/family-poster.png">
+          <source src="../assets/video/grouptrippy-family.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <strong>Group Trippy · Family</strong>
+          <span>Two levels of chaos · 45 sec</span>
+        </figcaption>
+      </figure>
+      <figure class="reel">
+        <video controls playsinline preload="metadata" poster="../assets/video/family-phone-poster.png">
+          <source src="../assets/video/grouptrippy-family-phone.mp4" type="video/mp4">
+        </video>
+        <figcaption>
+          <strong>Group Trippy · Even Rick</strong>
+          <span>The family group chat · 45 sec</span>
+        </figcaption>
+      </figure>
+    </div>
+  </main>
+</body>
+</html>
