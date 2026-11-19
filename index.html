@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=Young+Serif&family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght@9..144,600&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=games-popup-2">
+<link rel="stylesheet" href="styles.css?v=games-popup-3">
 </head>
 <body>
 <a class="skip" href="#projects">Skip to projects</a>
@@ -191,21 +191,26 @@
             </form>
           </div>
           <ul>
-            <li><strong>Great Minds</strong> Compare answers.</li>
-            <li><strong>Hot Takes</strong> Compare opinions.</li>
-            <li><strong>Draw Together</strong> Share a canvas.</li>
-            <li><strong>Desert Island Picks</strong> Compare picks.</li>
-            <li><strong>Price Is Right</strong> Guess prices.</li>
-            <li><strong>Map Drop</strong> Locate a photo.</li>
-            <li><strong>Who Knows Who</strong> Guess answers.</li>
-            <li><strong>Rate the Date</strong> Rate date ideas.</li>
-            <li><strong>Story Builder</strong> Write a story.</li>
-            <li><strong>Red Flag / Green Flag</strong> Compare traits.</li>
-            <li><strong>Guess My Playlist</strong> Guess their song.</li>
-            <li><strong>Caption This</strong> Caption a photo.</li>
-            <li><strong>Couch Detective</strong> Solve a mystery.</li>
-            <li><strong>Word Chain</strong> Chain words.</li>
+            <li><strong>Great Minds:</strong> you each fill in the same blank separately, then reveal your answers together.</li>
+            <li><strong>Hot Takes:</strong> slide from "nope" to "facts" on a statement, then compare.</li>
+            <li><strong>Draw Together:</strong> one canvas; you take turns adding a line.</li>
+            <li><strong>Desert Island Picks:</strong> choose 3 of 12 things and see what you share.</li>
+            <li><strong>Price Is Right:</strong> guess what everyday things cost.</li>
+            <li><strong>Map Drop:</strong> your match posts a travel photo and you pin where it was taken.</li>
+            <li><strong>Who Knows Who:</strong> guess how your match answered.</li>
+            <li><strong>Rate the Date:</strong> rate first-date ideas and find the ones you both like.</li>
+            <li><strong>Story Builder:</strong> alternate sentences and see where the story goes.</li>
+            <li><strong>Red Flag / Green Flag:</strong> call each trait, then compare.</li>
+            <li><strong>Guess My Playlist:</strong> guess which song they picked for a mood.</li>
+            <li><strong>Caption This:</strong> caption a photo from your match's camera roll, then hear the real story.</li>
+            <li><strong>Couch Detective:</strong> a co-op mystery where you each hold different clues.</li>
+            <li><strong>Word Chain:</strong> road-trip rules, with categories like countries, celebs and movies.</li>
           </ul>
+          <nav class="game-pages" aria-label="Game list pages">
+            <button type="button" class="game-prev">Back</button>
+            <span class="game-page-status" aria-live="polite"></span>
+            <button type="button" class="game-next">Next</button>
+          </nav>
         </dialog>
       </li>
       <li id="group-trippy">
@@ -276,7 +281,34 @@
 </div>
 <script>
   const gamesDialog = document.getElementById('games-dialog');
+  const games = Array.from(gamesDialog.querySelectorAll('li'));
+  const previousGames = gamesDialog.querySelector('.game-prev');
+  const nextGames = gamesDialog.querySelector('.game-next');
+  const gamePageStatus = gamesDialog.querySelector('.game-page-status');
+  const gamesPerPage = 3;
+  const gamePageCount = Math.ceil(games.length / gamesPerPage);
+  let gamePage = 0;
+
+  function showGamePage() {
+    games.forEach((game, index) => {
+      game.hidden = Math.floor(index / gamesPerPage) !== gamePage;
+    });
+    previousGames.disabled = gamePage === 0;
+    nextGames.disabled = gamePage === gamePageCount - 1;
+    gamePageStatus.textContent = `Page ${gamePage + 1} of ${gamePageCount}`;
+  }
+
+  previousGames.addEventListener('click', () => {
+    gamePage -= 1;
+    showGamePage();
+  });
+  nextGames.addEventListener('click', () => {
+    gamePage += 1;
+    showGamePage();
+  });
   document.querySelector('#p1meetsp2 .game-trigger button').addEventListener('click', () => {
+    gamePage = 0;
+    showGamePage();
     gamesDialog.showModal();
   });
   gamesDialog.addEventListener('keydown', (event) => {
