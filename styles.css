@@ -50,7 +50,7 @@ a:hover { color: #C8102E; text-decoration-color: currentColor; }
 .rule--sm { width: 48px; height: 4px; margin-bottom: 18px; }
 
 /* Hero */
-.hero { position: relative; z-index: 1; padding: clamp(64px, 11vw, 140px) 0 clamp(56px, 8vw, 104px); }
+.hero { position: relative; z-index: 1; padding: clamp(24px, 3vw, 40px) 0 clamp(56px, 8vw, 104px); }
 .hero h1 { margin: 0; font-weight: 750; font-size: clamp(42px, 7.2vw, 88px); line-height: 1.04; letter-spacing: -0.035em; max-width: 14ch; text-wrap: balance; }
 .hero h1 span { display: block; }
 .grad { background: var(--fire); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .08em; }
@@ -75,12 +75,12 @@ a:hover { color: #C8102E; text-decoration-color: currentColor; }
   .jump ol { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: start; }
   .jump li { min-width: 0; }
   .jump a { max-width: 100%; }
-  .hero { padding-top: 32px; }
 }
 
 /* Section head */
-.section-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 8px 32px; margin-bottom: 32px; }
+.section-head { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-bottom: 32px; }
 .section-head h2 { margin-bottom: 0; }
+#watch .section-head h1 { margin: 0; line-height: 1.1; }
 .section-note { margin: 0; color: var(--muted); font-size: 16px; }
 
 /* Project cards */
