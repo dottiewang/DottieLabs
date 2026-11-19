@@ -158,18 +158,21 @@ a:hover { color: #C8102E; text-decoration-color: currentColor; }
 #p1meetsp2 .game-trigger { position: relative; z-index: 1; grid-column: 1 / -1; border-top: 1px solid rgba(255,255,255,.2); padding-top: 16px; }
 #p1meetsp2 .game-trigger button { padding: 0; border: 0; background: none; color: #7CDBF8; font: inherit; font-size: 15px; font-weight: 700; cursor: pointer; }
 #p1meetsp2 .game-trigger button:hover { color: #fff; }
-#p1meetsp2 .game-list { width: min(680px, calc(100vw - 24px)); max-width: calc(100vw - 24px); max-height: calc(100vh - 24px); max-height: calc(100dvh - 24px); padding: clamp(16px, 4vw, 28px); border: 1px solid #35C6F4; border-radius: 18px; background: #0B0D12; color: #F2F4F8; }
+#p1meetsp2 .game-list { width: min(1000px, calc(100vw - 24px)); max-width: calc(100vw - 24px); max-height: calc(100vh - 24px); max-height: calc(100dvh - 24px); padding: clamp(16px, 4vw, 28px); border: 1px solid #35C6F4; border-radius: 18px; background: #0B0D12; color: #F2F4F8; }
 #p1meetsp2 .game-list::backdrop { background: rgba(0,0,0,.7); }
 #p1meetsp2 .game-list-head { position: sticky; top: 0; z-index: 1; display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding-bottom: 8px; background: #0B0D12; }
 #p1meetsp2 .game-list h2 { margin: 0; font-size: 24px; line-height: 1.2; }
 #p1meetsp2 .game-list button { padding: 8px 12px; border: 1px solid #7CDBF8; border-radius: 8px; background: transparent; color: #7CDBF8; font: inherit; font-size: 14px; white-space: nowrap; cursor: pointer; }
-#p1meetsp2 .game-list button:hover:not(:disabled) { background: #7CDBF8; color: #0B0D12; }
-#p1meetsp2 .game-list button:disabled { opacity: .45; cursor: default; }
-#p1meetsp2 .game-list ul { display: grid; gap: 14px; list-style: none; margin: 16px 0 0; padding: 0; }
+#p1meetsp2 .game-list button:hover { background: #7CDBF8; color: #0B0D12; }
+#p1meetsp2 .game-list ul { display: grid; gap: 14px 24px; list-style: none; margin: 16px 0 0; padding: 0; }
 #p1meetsp2 .game-list li { color: #C7D0DF; font-size: 15px; line-height: 1.45; }
 #p1meetsp2 .game-list strong { color: #fff; }
-#p1meetsp2 .game-pages { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 24px; }
-#p1meetsp2 .game-page-status { color: #C7D0DF; font-size: 14px; }
+@media (min-width: 600px) {
+  #p1meetsp2 .game-list ul { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (min-width: 960px) {
+  #p1meetsp2 .game-list ul { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
 
 #group-trippy { --c-bg: #F9FAFB; --c-glow: radial-gradient(110% 90% at 100% 0%, rgba(79,70,229,.12), transparent 60%); --c-ink: #1F2937; --c-head-ink: #4338CA; --c-muted: #4B5563; --c-line: #D1D5DB; --c-qr-line: #E5E7EB; --c-tag: #EEF2FF; --c-accent: #4338CA; --c-bar: #4F46E5; --c-btn: #4F46E5; --c-btn-ink: #fff; --c-btn-hover: #4338CA; --c-btn-hover-ink: #fff; --c-hover-line: #4F46E5; --c-shadow: rgba(79,70,229,.35); --c-mark-bg: #4F46E5; --c-mark-ink: #fff; --c-head: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; --c-head-weight: 700; --c-head-size: 28px; --c-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
 #group-trippy .card { --c-bg: #E8EBEF; --c-glow: linear-gradient(135deg, #F8FAFC 0%, #D7DCE2 50%, #F1F4F7 100%); --c-line: #A7AFBA; }

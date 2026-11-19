@@ -28,7 +28,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400..800&family=Young+Serif&family=Atkinson+Hyperlegible:wght@400;700&family=Fraunces:opsz,wght@9..144,600&family=Manrope:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap">
-<link rel="stylesheet" href="styles.css?v=games-popup-3">
+<link rel="stylesheet" href="styles.css?v=games-popup-4">
 </head>
 <body>
 <a class="skip" href="#projects">Skip to projects</a>
@@ -206,11 +206,6 @@
             <li><strong>Couch Detective:</strong> a co-op mystery where you each hold different clues.</li>
             <li><strong>Word Chain:</strong> road-trip rules, with categories like countries, celebs and movies.</li>
           </ul>
-          <nav class="game-pages" aria-label="Game list pages">
-            <button type="button" class="game-prev">Back</button>
-            <span class="game-page-status" aria-live="polite"></span>
-            <button type="button" class="game-next">Next</button>
-          </nav>
         </dialog>
       </li>
       <li id="group-trippy">
@@ -281,34 +276,7 @@
 </div>
 <script>
   const gamesDialog = document.getElementById('games-dialog');
-  const games = Array.from(gamesDialog.querySelectorAll('li'));
-  const previousGames = gamesDialog.querySelector('.game-prev');
-  const nextGames = gamesDialog.querySelector('.game-next');
-  const gamePageStatus = gamesDialog.querySelector('.game-page-status');
-  const gamesPerPage = 3;
-  const gamePageCount = Math.ceil(games.length / gamesPerPage);
-  let gamePage = 0;
-
-  function showGamePage() {
-    games.forEach((game, index) => {
-      game.hidden = Math.floor(index / gamesPerPage) !== gamePage;
-    });
-    previousGames.disabled = gamePage === 0;
-    nextGames.disabled = gamePage === gamePageCount - 1;
-    gamePageStatus.textContent = `Page ${gamePage + 1} of ${gamePageCount}`;
-  }
-
-  previousGames.addEventListener('click', () => {
-    gamePage -= 1;
-    showGamePage();
-  });
-  nextGames.addEventListener('click', () => {
-    gamePage += 1;
-    showGamePage();
-  });
   document.querySelector('#p1meetsp2 .game-trigger button').addEventListener('click', () => {
-    gamePage = 0;
-    showGamePage();
     gamesDialog.showModal();
   });
   gamesDialog.addEventListener('keydown', (event) => {
